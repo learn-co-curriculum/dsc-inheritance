@@ -1,5 +1,5 @@
 
-# Inheritance  in Python
+# Inheritance
 
 
 ## Introduction
@@ -8,7 +8,7 @@ In this lesson, we'll learn about how we can use inheritance to create relations
 
 ## Objectives
 
-In this lesson, we will learn to:
+You will be able to:
 
 * Use inheritance to to write D.R.Y. code 
 * Understand the relationship between subclasses and superclasses
@@ -129,7 +129,7 @@ print(paul.instrument_type)
 
     Stringed Instrument
     Stringed Instrument
-    
+
 
 
 ```python
@@ -139,7 +139,7 @@ paul.tune_instrument()
 
     Tune the strings!
     Tune the strings!
-    
+
 
 
 ```python
@@ -149,7 +149,7 @@ paul.practice()
 
     Strumming the old 6 string!
     I play the Seinfeld Theme Song when I get bored
-    
+
 
 
 ```python
@@ -160,7 +160,7 @@ paul.perform()
     Hello, New  York!
     Hello, New  York!
     Thanks for coming out!
-    
+
 
 Take a look at the way the classes were created, and the corresponding outputs in the cells above.  A couple things stand out:
 
@@ -170,18 +170,18 @@ Take a look at the way the classes were created, and the corresponding outputs i
 <br>  
 1. We were able to the things that were different in `Bass_Guitarist`, such as the behavior of the `practice` method, or the values for  the `name` and `role` attributes.
 
-#### Using `.super()`
+### Using `.super()`
 
 The `super()` method gives us access to the superclass of the object that calls `super()`.  In this case, we accessed `super()` to call its constructor method, `__init__()` to initialize the object just as if we were creating a new `guitar` object.  Then, we modified the attributes as needed.  Although we did not do it in this example, it is worth noting that we can also add attributes and methods to a subclass that a superclass does not have.  For instance, if we added the attribute `self.string_type = "bass"` inside the `Bass_Guitarist.__init__()` method, all bass guitarist objects would have that attribute, but guitarist objects would not.  Conversely, any changes that we make to the superclass `guitarist` will always be reflected in the subclass `Bass_Guitarist`. 
 
 
-#### Changing Values and Methods 
+### Changing Values and Methods 
 
 Note that in both of these classes, we have methods named `practice` with have the same name, but different behaviors. This is an example of **_Polymorphism_**, meaning that we can have methods that have the same name, but contain different code inside their bodies.  This is not a naming collision because these functions exist attached to different classes.  
 
 Also take note of the way the `perform` method is written inside of `Bass_Guitarist`. If we want a method in a subclass to do everything that method does in a superclass and *then* do something else, we can accomplish this by simply calling the superclass's version of the method by accessing it with `super()` and then adding any remaining behavior afterwards in the body of the function. 
 
-#### Accessing Methods
+### Accessing Methods
 
 Note that by default, subclasses have access to all methods contained in a superclass. Because they are a subclass, they can automatically do the same things as the corresponding superclass.   Note that we do not need to declare the functions in the body of the subclass to have access to them--we did not mention the method `tune_instrument` at all, but `paul` still has access to the exact same `tune_instrument` method as `george`.  We only declare methods that are mentioned in the superclass if we want to override their behavior in the subclass.  
 
@@ -287,7 +287,7 @@ for musician in the_beatles:
     Ringo Starr is the Drummer!
     George Harrison is the Guitarist!
     Paul McCartney is the Bass Guitarist!
-    
+
 
 
 ```python
@@ -299,7 +299,7 @@ for musician in the_beatles:
     Where did I put those drum sticks?
     Tuning Instrument!
     Tuning Instrument!
-    
+
 
 
 ```python
@@ -311,7 +311,7 @@ for musician in the_beatles:
     Why does my chair still say "Pete Best"?
     Strumming the old 6 string!
     I play the Seinfeld Theme Song when I get bored
-    
+
 
 
 ```python
@@ -324,11 +324,11 @@ for musician in the_beatles:
     Hello New York!
     Hello New York!
     Thanks for coming out!
-    
 
-# Conclusion
 
-In this lab, we learned how to:
+## Summary
+
+In this lab, you learned how to:
 
 * Use inheritance to to write D.R.Y. code 
 * Understand the relationship between subclasses and superclasses
