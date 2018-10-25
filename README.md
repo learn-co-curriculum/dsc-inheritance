@@ -166,9 +166,9 @@ Take a look at the way the classes were created, and the corresponding outputs i
 
 1.  We never declared a `perform()` method for class `Bass_Guitarist`, but our `george` instance still has access to this method.  
 <br>  
-1.  We never set a value for the `instrument_type` attribute in class `Bass_Guitarist`, but `george` that attribute, and it has the same value as it has in the `Guitarist` class, because we called the `super().__init__()` method first.  
+1.  We never set a value for the `instrument_type` attribute in class `Bass_Guitarist`, but our instance, `george`, has that attribute, and the attribute has the same value as it had in the `Guitarist` class. This is because we called the `super().__init__()` method first.  
 <br>  
-1. We were able to the things that were different in `Bass_Guitarist`, such as the behavior of the `practice` method, or the values for  the `name` and `role` attributes.
+1. We were able to change/overwrite the things that were different in `Bass_Guitarist` class, such as the behavior of the `practice` and `perform` methods, as well as the values for the `name` and `role` attributes.
 
 ### Using `.super()`
 
