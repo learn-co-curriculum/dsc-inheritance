@@ -4,7 +4,7 @@
 
 ## Introduction
 
-In this lesson, we'll learn about how we can use inheritance to create relationships between **_Superclasses_** and **_Subclasses_** to save us from writing redundant code!
+In this lesson, you'll learn about how you can use inheritance to create relationships between **_Superclasses_** and **_Subclasses_** to further save you from writing redundant code!
 
 ## Objectives
 
@@ -16,14 +16,14 @@ You will be able to:
 
 ## Writing D.R.Y. Code
 
-Let's assume for a second that we are going to build a data model around the most popular band of the last century, the Beatles!
+Assume for a second that you are going to build a data model around the most popular band of the last century, the Beatles!
 
-<img src = 'definitely_not_the_monkees.JPG'>
+<img src = 'images/definitely_not_the_monkees.JPG'>
 <center>**_John, Paul, George, and Ringo, shortly before recording their
     breakout hit, "Hey Hey We're the Monkees"_**</center>
     
     
-Using the skills we've learned so far, we could absolutely create classes for each of the different roles in the band.  If we created a class for each different musician, it would probably look something like this:
+Using the skills you've learned so far, you could absolutely create classes for each of the different roles in the band.  If you created a class for each different musician, it would probably look something like this:
 
 ```python
 class Drummer(object):
@@ -71,7 +71,7 @@ If you're thinking about what it would be like to write this code, the first thi
 
 > “I will always choose a lazy person to do a hard job. Because a lazy person will find an easy way to do it.” - Bill Gates
 
-Good programmers try to follow the D.R.Y. rule, which stands for **_Don't Repeat Yourself!_** In the example above, we find ourselves having to type the same lines of code over and over again--the attributes in each class, the same method names (even though the bodies of the functions will likely be different), again and again.  This violates our D.R.Y. rule! Luckily, we can restructure our code in an intelligent way that will allow us to accomplish the same thing without repeating anything by using **_Inheritance_**!
+Good programmers try to follow the D.R.Y. rule, which stands for **_Don't Repeat Yourself!_** In the example above, you have to type the same lines of code over and over again--the attributes in each class, the same method names (even though the bodies of the functions will likely be different), again and again.  This violates the D.R.Y. rule! Luckily, we can restructure our code in an intelligent way that will allow us to accomplish the same thing without repeating anything by using **_Inheritance_**!
 
 
 ## Our First Subclass
@@ -164,32 +164,32 @@ paul.perform()
 
 Take a look at the way the classes were created, and the corresponding outputs in the cells above.  A couple things stand out:
 
-1.  We never declared a `perform()` method for class `Bass_Guitarist`, but our `george` instance still has access to this method.  
+1.  The `perform()` method was never declared for class `Bass_Guitarist`, but the `george` instance still has access to this method.  
 <br>  
-1.  We never set a value for the `instrument_type` attribute in class `Bass_Guitarist`, but our instance, `george`, has that attribute, and the attribute has the same value as it had in the `Guitarist` class. This is because we called the `super().__init__()` method first.  
+1.The `instrument_type` attribute was never set for the `Bass_Guitarist` class, but the `george`  instance nonetheless has that attribute, and the attribute has the same value as it had in the `Guitarist` class. This is because it inherited it from the `Guitarist` calss through the `super().__init__()` method first.  
 <br>  
-1. We were able to change/overwrite the things that were different in `Bass_Guitarist` class, such as the behavior of the `practice` and `perform` methods, as well as the values for the `name` and `role` attributes.
+1. With inheritence, you can still change or overwrite specific attributes or methods. For example, in the `Bass_Guitarist` class, the `practice` and `perform` methods, as well as the values for the `name` and `role` attributes all differ from the inherited `Guitarist` class.
 
 ### Using `.super()`
 
-The `super()` method gives us access to the superclass of the object that calls `super()`.  In this case, we accessed `super()` to call its constructor method, `__init__()` to initialize the object just as if we were creating a new `guitar` object.  Then, we modified the attributes as needed.  Although we did not do it in this example, it is worth noting that we can also add attributes and methods to a subclass that a superclass does not have.  For instance, if we added the attribute `self.string_type = "bass"` inside the `Bass_Guitarist.__init__()` method, all bass guitarist objects would have that attribute, but guitarist objects would not.  Conversely, any changes that we make to the superclass `guitarist` will always be reflected in the subclass `Bass_Guitarist`. 
+The `super()` method gives you access to the superclass of the object that calls `super()`.  In this case, you saw how `super()` was used in the  `__init__()` method to initialize the object just as if we were creating a new `guitar` object.  Afterwards, you can modify attributes as needed.  Although not shown in this example, it is worth noting that you can also add attributes and methods to a subclass that a superclass does not have.  For instance, if you added the attribute `self.string_type = "bass"` inside the `Bass_Guitarist.__init__()` method, all bass guitarist objects would have that attribute, but guitarist objects would not.  Conversely, any changes that you make to the superclass `guitarist` will always be reflected in the subclass `Bass_Guitarist`. 
 
 
 ### Changing Values and Methods 
 
-Note that in both of these classes, we have methods named `practice` with have the same name, but different behaviors. This is an example of **_Polymorphism_**, meaning that we can have methods that have the same name, but contain different code inside their bodies.  This is not a naming collision because these functions exist attached to different classes.  
+Note that in both of these classes, you have methods named `practice` with have the same name, but different behaviors. This is an example of **_Polymorphism_**, meaning that you can have methods that have the same name, but contain different code inside their bodies.  This is not a naming collision because these functions exist attached to different classes.  
 
-Also take note of the way the `perform` method is written inside of `Bass_Guitarist`. If we want a method in a subclass to do everything that method does in a superclass and *then* do something else, we can accomplish this by simply calling the superclass's version of the method by accessing it with `super()` and then adding any remaining behavior afterwards in the body of the function. 
+Also take note of the way the `perform` method is written inside of `Bass_Guitarist`. If you want a method in a subclass to do everything that method does in a superclass and *then* do something else, you can accomplish this by simply calling the superclass's version of the method by accessing it with `super()` and then adding any remaining behavior afterwards in the body of the function. 
 
 ### Accessing Methods
 
-Note that by default, subclasses have access to all methods contained in a superclass. Because they are a subclass, they can automatically do the same things as the corresponding superclass.   Note that we do not need to declare the functions in the body of the subclass to have access to them--we did not mention the method `tune_instrument` at all, but `paul` still has access to the exact same `tune_instrument` method as `george`.  We only declare methods that are mentioned in the superclass if we want to override their behavior in the subclass.  
+By default, subclasses have access to all methods contained in a superclass. Because they are a subclass, they can automatically do the same things as the corresponding superclass.   You do not need to declare the functions in the body of the subclass to have access to them. For example, while there was no mention of the method `tune_instrument`, `paul` still has access to the exact same `tune_instrument` method as `george`.  You only declare methods that are mentioned in the superclass if you want to override their behavior in the subclass.  
 
 ## Abstract Superclasses
 
-When we make use of a subclass and a superclass, we are defining levels of **_Abstraction_**.  In this case, the superclass `Guitarist` is one level of abstraction higher than the subclass `Bass_Guitarist`.  Intuitively, this makes sense--bass guitarists are a kind of guitarist, but ~~thankfully~~ not all guitarists are bass guitarists.
+When you make use of a subclass and a superclass, you are defining levels of **_Abstraction_**.  In this case, the superclass `Guitarist` is one level of abstraction higher than the subclass `Bass_Guitarist`.  Intuitively, this makes sense--bass guitarists are a kind of guitarist, but not all guitarists are bass guitarists.
 
-However, it's worth noting that we can always go a level of abstraction higher by defining a class that is more vague, but still captures the common thread amongst the subclasses. We'll demonstrate this with the following example:
+It's also worth noting that you can always go a level of abstraction higher by defining a class that is more vague, but still captures the common thread amongst the subclasses. Here's an example to demonstrate.
 
 At first glance, it may seem that guitarists, singers, and drummers don't have enough in common with each other to make use of inheritance--a drummer is not a type of singer, etc.  However, one thing they all have in common is they are all a type of `Musician`.  No matter what sort of musician you are, you:
 
@@ -198,13 +198,13 @@ At first glance, it may seem that guitarists, singers, and drummers don't have e
 * Know how to `tune_instrument`
 * Can `practice` and `perform`
 
-In this way, we can write a single superclass that we can use for all of the subclasses in our band: `Drummer`, `Guitarist`, `Bass_Guitarist`, and `Singer` are all types of musicians!
+In this way, you can write a single superclass that will be useful for all of the subclasses in our band: `Drummer`, `Guitarist`, `Bass_Guitarist`, and `Singer` are all types of musicians!
 
-This is called an **_Abstract Superclass_** because the superclass we're using is at a level of abstraction where it does not make sense for it to exist on its own.  For example, it makes sense to instantiate drummers, singers, and guitarists--they are members of a band, and by playing these instruments, they are musicians.  However, you cannot be a `musician` without belonging to one of these subclasses--there is no such thing as a musician that doesnt play any instruments or sing!  It makes no sense to instantiate a `Musician`, because they don't really exist in the real world--we only create this **_Abstract Superclass_** to define the commonalities between our subclasses and save ourselves some redundant code!
+This is called an **_Abstract Superclass_**. The superclass being used is at a level of abstraction where it does not make sense for it to exist on its own.  For example, it makes sense to instantiate drummers, singers, and guitarists--they are members of a band, and by playing these instruments, they are musicians.  However, you cannot be a `musician` without belonging to one of these subclasses--there is no such thing as a musician that doesnt play any instruments or sing!  It makes no sense to instantiate a `Musician`, because they don't really exist in the real world--you only create this **_Abstract Superclass_** to define the commonalities between our subclasses and save ourselves some redundant code!
 
 ### Creating The Beatles Using an Abstract Superclass
 
-In the cell below, we'll model the Beatles by making use of the abstract superclass `Musician`, and then subclassing it when we create `Drummer`, `Singer`, and `Guitarist`.  Note that since we can have multiple layers of abstraction, we'll still keep `Bass_Guitarist` as a subclass of `Guitarist`.
+The cell below models the Beatles by making use of the abstract superclass `Musician`, and then subclassing it when creating `Drummer`, `Singer`, and `Guitarist`.  Note that since you can have multiple layers of abstraction, it makes sense to keep `Bass_Guitarist` as a subclass of `Guitarist`.
 
 
 ```python
