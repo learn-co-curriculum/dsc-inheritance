@@ -10,7 +10,7 @@ In this lesson, you'll learn about how you can use inheritance to create relatio
 
 You will be able to:
 
-* Use inheritance to to write D.R.Y. code 
+* Use inheritance to write D.R.Y. code 
 * Understand the relationship between subclasses and superclasses
 * Create Object-Oriented data models that describe the real world with classes and subclasses
 
@@ -162,24 +162,25 @@ paul.perform()
     Thanks for coming out!
 
 
-Take a look at the way the classes were created, and the corresponding outputs in the cells above.  A couple things stand out:
+
+Take a look at the way the classes were created, and the corresponding outputs in the cells above.  A couple of things stand out:
 
 1.  The `perform()` method was never declared for class `Bass_Guitarist`, but the `george` instance still has access to this method.  
 <br>  
-1.The `instrument_type` attribute was never set for the `Bass_Guitarist` class, but the `george`  instance nonetheless has that attribute, and the attribute has the same value as it had in the `Guitarist` class. This is because it inherited it from the `Guitarist` calss through the `super().__init__()` method first.  
+1.The `instrument_type` attribute was never set for the `Bass_Guitarist` class, but the `george`  instance nonetheless has that attribute, and the attribute has the same value as it had in the `Guitarist` class. This is because it inherited it from the `Guitarist` calls through the `super().__init__()` method first.  
 <br>  
-1. With inheritence, you can still change or overwrite specific attributes or methods. For example, in the `Bass_Guitarist` class, the `practice` and `perform` methods, as well as the values for the `name` and `role` attributes all differ from the inherited `Guitarist` class.
+1. With inheritance, you can still change or overwrite specific attributes or methods. For example, in the `Bass_Guitarist` class, the `practice` and `perform` methods, as well as the values for the `name` and `role` attributes all differ from the inherited `Guitarist` class.
 
 ### Using `.super()`
 
-The `super()` method gives you access to the superclass of the object that calls `super()`.  In this case, you saw how `super()` was used in the  `__init__()` method to initialize the object just as if we were creating a new `guitar` object.  Afterwards, you can modify attributes as needed.  Although not shown in this example, it is worth noting that you can also add attributes and methods to a subclass that a superclass does not have.  For instance, if you added the attribute `self.string_type = "bass"` inside the `Bass_Guitarist.__init__()` method, all bass guitarist objects would have that attribute, but guitarist objects would not.  Conversely, any changes that you make to the superclass `guitarist` will always be reflected in the subclass `Bass_Guitarist`. 
+The `super()` method gives you access to the superclass of the object that calls `super()`.  In this case, you saw how `super()` was used in the  `__init__()` method to initialize the object just as if we were creating a new `guitar` object.  Afterward, you can modify attributes as needed.  Although not shown in this example, it is worth noting that you can also add attributes and methods to a subclass that a superclass does not have.  For instance, if you added the attribute `self.string_type = "bass"` inside the `Bass_Guitarist.__init__()` method, all bass guitarist objects would have that attribute, but guitarist objects would not.  Conversely, any changes that you make to the superclass `guitarist` will always be reflected in the subclass `Bass_Guitarist`. 
 
 
 ### Changing Values and Methods 
 
 Note that in both of these classes, you have methods named `practice` with have the same name, but different behaviors. This is an example of **_Polymorphism_**, meaning that you can have methods that have the same name, but contain different code inside their bodies.  This is not a naming collision because these functions exist attached to different classes.  
 
-Also take note of the way the `perform` method is written inside of `Bass_Guitarist`. If you want a method in a subclass to do everything that method does in a superclass and *then* do something else, you can accomplish this by simply calling the superclass's version of the method by accessing it with `super()` and then adding any remaining behavior afterwards in the body of the function. 
+Also, take note of the way the `perform` method is written inside of `Bass_Guitarist`. If you want a method in a subclass to do everything that method does in a superclass and *then* do something else, you can accomplish this by simply calling the superclass's version of the method by accessing it with `super()` and then adding any remaining behavior afterwards in the body of the function. 
 
 ### Accessing Methods
 
@@ -200,7 +201,7 @@ At first glance, it may seem that guitarists, singers, and drummers don't have e
 
 In this way, you can write a single superclass that will be useful for all of the subclasses in our band: `Drummer`, `Guitarist`, `Bass_Guitarist`, and `Singer` are all types of musicians!
 
-This is called an **_Abstract Superclass_**. The superclass being used is at a level of abstraction where it does not make sense for it to exist on its own.  For example, it makes sense to instantiate drummers, singers, and guitarists--they are members of a band, and by playing these instruments, they are musicians.  However, you cannot be a `musician` without belonging to one of these subclasses--there is no such thing as a musician that doesnt play any instruments or sing!  It makes no sense to instantiate a `Musician`, because they don't really exist in the real world--you only create this **_Abstract Superclass_** to define the commonalities between our subclasses and save ourselves some redundant code!
+This is called an **_Abstract Superclass_**. The superclass being used is at a level of abstraction where it does not make sense for it to exist on its own.  For example, it makes sense to instantiate drummers, singers, and guitarists--they are members of a band, and by playing these instruments, they are musicians.  However, you cannot be a `musician` without belonging to one of these subclasses--there is no such thing as a musician that doesn’t play any instruments or sing!  It makes no sense to instantiate a `Musician`, because they don't really exist in the real world--you only create this **_Abstract Superclass_** to define the commonalities between our subclasses and save ourselves some redundant code!
 
 ### Creating The Beatles Using an Abstract Superclass
 
