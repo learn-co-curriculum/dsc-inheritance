@@ -165,11 +165,11 @@ paul.perform()
 
 Take a look at the way the classes were created, and the corresponding outputs in the cells above.  A couple of things stand out:
 
-1.  The `perform()` method was never declared for class `Bass_Guitarist`, but the `george` instance still has access to this method.  
-<br>  
-1.The `instrument_type` attribute was never set for the `Bass_Guitarist` class, but the `george`  instance nonetheless has that attribute, and the attribute has the same value as it had in the `Guitarist` class. This is because it inherited it from the `Guitarist` calls through the `super().__init__()` method first.  
-<br>  
-1. With inheritance, you can still change or overwrite specific attributes or methods. For example, in the `Bass_Guitarist` class, the `practice` and `perform` methods, as well as the values for the `name` and `role` attributes all differ from the inherited `Guitarist` class.
+1.  The `tune_instrument()` method was never declared for class `Bass_Guitarist`, but the `paul` instance still has access to this method.  
+
+2. The `instrument_type` attribute was never set for the `Bass_Guitarist` class, but the `paul`  instance nonetheless has that attribute, and the attribute has the same value as it had in the `Guitarist` class. This is because it inherited it from the `Guitarist` calls through the `super().__init__()` method first.  
+
+3. With inheritance, you can still change or overwrite specific attributes or methods. For example, in the `Bass_Guitarist` class, the `practice` and `perform` methods, as well as the values for the `name` and `role` attributes all differ from the inherited `Guitarist` class.
 
 ### Using `.super()`
 
