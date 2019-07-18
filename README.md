@@ -18,7 +18,7 @@ You will be able to:
 
 Assume for a second that you are going to build a data model around the most popular band of the last century, the Beatles!
 
-<img src = 'images/definitely_not_the_monkees.JPG'>
+<img src = 'images/new_beatles.png' width="600">
 <center>**_John, Paul, George, and Ringo, shortly before recording their
     breakout hit, "Hey Hey We're the Monkees"_**</center>
     
