@@ -163,7 +163,7 @@ paul.perform()
 
 
 
-Take a look at the way the classes were created, and the corresponding outputs in the cells above.  A couple of things stand out:
+Take a look at the way the classes were created and the corresponding outputs in the cells above.  A couple of things stand out:
 
 1.  The `tune_instrument()` method was never declared for class `Bass_Guitarist`, but the `paul` instance still has access to this method.  
 
@@ -178,9 +178,9 @@ The `super()` method gives you access to the superclass of the object that calls
 
 ### Changing Values and Methods 
 
-Note that in both of these classes, you have methods named `practice` with have the same name, but different behaviors. This is an example of **_Polymorphism_**, meaning that you can have methods that have the same name, but contain different code inside their bodies.  This is not a naming collision because these functions exist attached to different classes.  
+Note that in both of these classes, you have methods named `practice` that have the same name, but different behaviors. This is an example of **_Polymorphism_**, meaning that you can have methods that have the same name, but contain different code inside their bodies.  This is not a naming collision because these functions exist attached to different classes.  
 
-Also, take note of the way the `perform` method is written inside of `Bass_Guitarist`. If you want a method in a subclass to do everything that method does in a superclass and *then* do something else, you can accomplish this by simply calling the superclass's version of the method by accessing it with `super()` and then adding any remaining behavior afterwards in the body of the function. 
+Also, take note of the way the `perform` method is written inside of `Bass_Guitarist`. If you want a method in a subclass to do everything that method does in a superclass and *then* do something else, you can accomplish this by simply calling the superclass's version of the method by accessing it with `super()` and then adding any remaining behavior afterward in the body of the function. 
 
 ### Accessing Methods
 
@@ -190,7 +190,7 @@ By default, subclasses have access to all methods contained in a superclass. Bec
 
 When you make use of a subclass and a superclass, you are defining levels of **_Abstraction_**.  In this case, the superclass `Guitarist` is one level of abstraction higher than the subclass `Bass_Guitarist`.  Intuitively, this makes sense--bass guitarists are a kind of guitarist, but not all guitarists are bass guitarists.
 
-It's also worth noting that you can always go a level of abstraction higher by defining a class that is more vague, but still captures the common thread amongst the subclasses. Here's an example to demonstrate.
+It's also worth noting that you can always go a level of abstraction higher by defining a class that is more vague but still captures the common thread amongst the subclasses. Here's an example to demonstrate.
 
 At first glance, it may seem that guitarists, singers, and drummers don't have enough in common with each other to make use of inheritance--a drummer is not a type of singer, etc.  However, one thing they all have in common is they are all a type of `Musician`.  No matter what sort of musician you are, you:
 
@@ -331,6 +331,6 @@ for musician in the_beatles:
 
 In this lab, you learned how to:
 
-* Use inheritance to to write D.R.Y. code 
+* Use inheritance to write D.R.Y. code 
 * Understand the relationship between subclasses and superclasses
 * Create Object-Oriented data models that describe the real world with classes and subclasses
