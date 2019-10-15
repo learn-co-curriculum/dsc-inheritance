@@ -10,17 +10,17 @@ In this lesson, you'll learn about how you can use inheritance to create relatio
 
 You will be able to:
 
-* Use inheritance to write D.R.Y. code 
-* Understand the relationship between subclasses and superclasses
-* Create Object-Oriented data models that describe the real world with classes and subclasses
+* Use inheritance to write nonredundant code
+* Describe the relationship between subclasses and superclasses
+* Create a domain model using OOP
 
 ## Writing D.R.Y. Code
 
 Assume for a second that you are going to build a data model around the most popular band of the last century, the Beatles!
 
 <img src = 'images/new_beatles.png' width="600">
-<center>**_John, Paul, George, and Ringo, shortly before recording their
-    breakout hit, "Hey Hey We're the Monkees"_**</center>
+<center>John, Paul, George, and Ringo, shortly before recording their
+    breakout hit, "Hey Hey We're the Monkees"</center>
     
     
 Using the skills you've learned so far, you could absolutely create classes for each of the different roles in the band.  If you created a class for each different musician, it would probably look something like this:
@@ -78,7 +78,7 @@ Good programmers try to follow the D.R.Y. rule, which stands for **_Don't Repeat
 
 The `Guitarist` class and the `Bass_Guitarist` class are extremely similar.  In fact, we could say that Bass Guitarists are a special case of Guitarists.  With a few notable exceptions, the `Bass_Guitarist` class is generally going to be more similar than different to the `Guitarist` class.  
 
-In python, we can make `Bass_Guitarist` a **_subclass_** of `Guitarist`.  This will mean that the `Bass_Guitarist` class will **_Inherit_** the attributes and methods of its superclass, `Guitarist`.  This will save us a lot of redundant code!
+In Python, we can make `Bass_Guitarist` a **_subclass_** of `Guitarist`.  This will mean that the `Bass_Guitarist` class will **_Inherit_** the attributes and methods of its superclass, `Guitarist`.  This will save us a lot of redundant code!
 
 See the example in the cell below. 
 
@@ -329,8 +329,4 @@ for musician in the_beatles:
 
 ## Summary
 
-In this lab, you learned how to:
-
-* Use inheritance to write D.R.Y. code 
-* Understand the relationship between subclasses and superclasses
-* Create Object-Oriented data models that describe the real world with classes and subclasses
+In this lab, you learned how to use inheritance to write nonredundant code, describe the relationship between subclasses and superclasses, and create a domain model using OOP.
